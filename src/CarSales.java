@@ -8,7 +8,7 @@ public class CarSales
 {
     public String salesunroof;
     public String saletype;
-    public static void main(String [] args) 
+    public static void main(String [] args) //Deals with price data in relation to user input
     {
         Sale s1 = new Sale();
         int total = 10000;
@@ -23,10 +23,6 @@ public class CarSales
         {
             total = total;
         }
-        else
-        {
-            System.out.println("Please input either electric or hybrid");
-        }
         
         if (s1.sunroof.equalsIgnoreCase("yes"))
         {
@@ -35,10 +31,6 @@ public class CarSales
         else if (s1.sunroof.equalsIgnoreCase("no"))
         {
             total = total;
-        }
-        else
-        {
-            System.out.println("Please input either yes or no");
         }
         
         System.out.println("The total cost of your car is £" + total);
@@ -66,11 +58,13 @@ public class CarSales
         
         if (saletype.equalsIgnoreCase("Electric") || saletype.equalsIgnoreCase("Hybrid"))
         {
-            return s;    
+            return s;   
         }
         else 
         {
-            setType(s, saletype);
+            System.out.println("Please input either electric or hybrid");
+            System.out.println("");
+            setType(s, saletype); //asks again if input isn't satisfactory
         }
         
         return s;
@@ -90,14 +84,16 @@ public class CarSales
         }
         else 
         {
-            setSunroof(s, salesunroof);
+            System.out.println("Please input either yes or no");
+            System.out.println("");
+            setSunroof(s, salesunroof); //asks again if input isn't satisfactory
         }
         
         return s;  
     }
 }
 
-class Sale
+class Sale //sets up my sale class
 {
     String type;
     String sunroof;
