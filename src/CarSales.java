@@ -35,6 +35,8 @@ public class CarSales
         
         System.out.println("The total cost of your car is £" + total);
         
+        System.exit(0);
+        
         
     }
     
