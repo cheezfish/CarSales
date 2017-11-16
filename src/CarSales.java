@@ -15,20 +15,20 @@ public class CarSales
         s1 = setType(s1, "Electric");
         s1 = setSunroof(s1, "yes");
         
-        if (s1.type.equalsIgnoreCase("Electric"))
+        if (getType(s1).equalsIgnoreCase("Electric"))
         {
             total = total - 1000;
         }
-        else if (s1.type.equalsIgnoreCase("Hybrid"))
+        else if (getType(s1).equalsIgnoreCase("Hybrid"))
         {
             total = total;
         }
         
-        if (s1.sunroof.equalsIgnoreCase("yes"))
+        if (getSunroof(s1).equalsIgnoreCase("yes"))
         {
             total = total + 500;
         }
-        else if (s1.sunroof.equalsIgnoreCase("no"))
+        else if (getSunroof(s1).equalsIgnoreCase("no"))
         {
             total = total;
         }
@@ -72,6 +72,8 @@ public class CarSales
         return s;
       
     }
+    
+    
     
     public static Sale setSunroof (Sale s, String salesunroof)
     {
